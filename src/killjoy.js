@@ -8,7 +8,7 @@ const options = {
     activities: [
       {
         name: "VALORANT",
-        type: "PLAYING"
+        type: "COMPETING"
       }
     ]
   },
@@ -183,12 +183,13 @@ client.on("interactionCreate", async interaction => {
       const channels = guilds.get(key);
       const teamVCs = [channels.channelA, channels.channelB];
       await interaction.followUp("集合させています");
-      await Promise.all(teamVCs.map(async vc => {
-        teamVCs.map(async vc => await Promise.all(cache.get(vc).members.map(async member => {
+      for (const vcId of teamVCs) {
+        const vc = cache.get(vcId)
+        for (const member of vc.members.values()) {
           if (!member?.voice?.channel) return;
-          return await member.voice.setChannel(channels.channelHome);
-        })));
-      }));
+          await member.voice.setChannel(channels.channelHome);
+        }
+      }
       await interaction.editReply("集合させました");
       break;
     }
