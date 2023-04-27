@@ -3,28 +3,32 @@
 VALORANTカスタム用のDiscord Bot
 
 
-# 使い方
+## ⚠️ このリポジトリはアップデートされません ⚠️
+今後は [discord-custom-game-bot#valorant](https://github.com/secchanu/discord-custom-game-bot/tree/valorant) での開発になります
+
+
+## 使い方
 
 Botを [ここ](https://discord.com/api/oauth2/authorize?client_id=861967109985927208&permissions=16777216&scope=bot%20applications.commands) から使用するサーバーへ招待
 
 チャットで `/help` と送信することで詳しい使い方を見ることができます。
 
 
-# 機能
+## 機能
 
 * チーム分け (自動でそれぞれのVCに移動)
 * 集合
 * マップの抽選
 
 
-# 自分で動かしたい人
+## 自分で動かしたい人
 
-## 動作環境
+### 動作環境
 
 * Node.js 16.6.0 以上
 
 
-## インストール
+### インストール
 
 ```bash
 git clone https://github.com/secchanu/discord-valorant-custom-bot.git
@@ -49,7 +53,7 @@ npm run setup
 
 Discordの仕様上、コマンドの反映まで1時間程度かかります
 
-## 動かし方
+### 動かし方
 
 ```bash
 npm start
